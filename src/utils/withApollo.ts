@@ -1,29 +1,37 @@
 import withApollo from "next-with-apollo";
-import ApolloClient, { InMemoryCache } from "apollo-boost";
-import { onError } from "apollo-link-error";
+import ApolloClient from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
 
-const GRAPHQL_ENDPOINT_DEVELOPMENT = "http://localhost:4000";
-const GRAPHQL_ENDPOINT_PRODUCTION = "http://ALIAS.USER.now.sh/API_ENDPOINT";
+import { ApolloLink } from "apollo-link";
+import { onError } from "apollo-link-error";
+import { HttpLink } from "apollo-link-http";
+
+const { GRAPHQL_URL } = process.env;
+
+const httpLink = new HttpLink({
+  uri: GRAPHQL_URL,
+  fetch: fetch,
+  credentials: "same-origin"
+});
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
     graphQLErrors.map(({ message, locations, path }) =>
       console.log(
-        `GraphQL error: Message ${message}, Location: ${locations} Path: ${path}`
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
       )
-    )
-  if (networkError) console.log(`Network error: ${networkError}`)
+    );
+
+  if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
-const GRAPHQL_ENDPOINT =
-  process.env.NODE_ENV === "development"
-    ? GRAPHQL_ENDPOINT_DEVELOPMENT
-    : GRAPHQL_ENDPOINT_PRODUCTION;
+const link = ApolloLink.from([errorLink, httpLink]);
 
 export default withApollo(
   ({ ctx, headers, initialState }) =>
     new ApolloClient({
-      uri: GRAPHQL_ENDPOINT,
+      ssrMode: true,
+      link,
       cache: new InMemoryCache().restore(initialState || {})
     })
 );
