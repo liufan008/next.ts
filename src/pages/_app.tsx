@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import NProgress from "nprogress";
 import Router from "next/router";
 import Head from "next/head";
@@ -28,22 +27,6 @@ class MyApp extends App<Props> {
           <Head>
             <link rel="stylesheet" type="text/css" href="/nprogress.css" />
           </Head>
-          <nav>
-            <style jsx>{`
-              a {
-                margin: 0 10px 0 0;
-              }
-            `}</style>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-            <Link href="/stars" as="github-stars">
-              <a>Stars</a>
-            </Link>
-          </nav>
           <Component {...pageProps} />
         </ApolloProvider>
       </>
