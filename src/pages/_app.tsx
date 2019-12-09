@@ -6,7 +6,9 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import withData from "~/utils/withApollo";
 import App from "next/app";
-
+import { ThemeProvider } from "styled-components";
+import { theme } from "~/styles/theme";
+import GlobalStyle from "~/styles/globals";
 Router.events.on("routeChangeStart", url => {
   console.log(`Loading: ${url}`);
   NProgress.start();
@@ -22,14 +24,15 @@ class MyApp extends App<Props> {
   render(): JSX.Element {
     const { Component, pageProps, apollo } = this.props;
     return (
-      <>
+      <ThemeProvider theme={theme}>
         <ApolloProvider client={apollo}>
           <Head>
             <link rel="stylesheet" type="text/css" href="/nprogress.css" />
           </Head>
+          <GlobalStyle />
           <Component {...pageProps} />
         </ApolloProvider>
-      </>
+      </ThemeProvider>
     );
   }
 }

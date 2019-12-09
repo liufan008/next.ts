@@ -9,7 +9,7 @@ const Post = (): JSX.Element => {
     <>
       <p>Post: {pid} </p>
       <Link href="/post/[pid]" as={`/post/${pid}`}>
-        <a>First Post</a>
+        <a>{pid} post</a>
       </Link>
     </>
   );

@@ -1,16 +1,19 @@
 import * as React from "react";
-import Router from "next/router";
 import Layout from "~/components/Layout";
 import { NextPage } from "next";
+import styled from "styled-components";
 
 const IndexPage: NextPage = () => {
   return (
     <>
       <Layout title="Home | Next.js + TypeScript Example">
-        <h1>Hello Next.js 👋</h1>
-        <p></p>
+        <StyledHeader>Hello Next.js 👋</StyledHeader>
       </Layout>
     </>
   );
 };
 export default IndexPage;
+
+const StyledHeader = styled.h1`
+  color: var(--color-primary-light);
+`;
