@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 const linkStyle = {
-  marginRight: 15
-};
+  marginRight: 15,
+}
 
 const Header = (): JSX.Element => (
   <nav>
@@ -16,6 +16,6 @@ const Header = (): JSX.Element => (
       <a style={linkStyle}>Stars</a>
     </Link>
   </nav>
-);
+)
 
-export default Header;
+export default Header
