@@ -9,6 +9,7 @@ import App from "next/app";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/styles/theme";
 import GlobalStyle from "~/styles/globals";
+
 Router.events.on("routeChangeStart", url => {
   console.log(`Loading: ${url}`);
   NProgress.start();
