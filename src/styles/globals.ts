@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     * {
@@ -55,4 +55,4 @@ export default createGlobalStyle`
     a {
       -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
-`;
+`

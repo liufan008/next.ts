@@ -1,7 +1,7 @@
-import * as React from "react";
-import Layout from "~/components/Layout";
-import { NextPage } from "next";
-import styled from "styled-components";
+import * as React from 'react'
+import Layout from '~/components/Layout'
+import { NextPage } from 'next'
+import styled from 'styled-components'
 
 const IndexPage: NextPage = () => {
   return (
@@ -10,10 +10,10 @@ const IndexPage: NextPage = () => {
         <StyledHeader>Hello Next.js 👋</StyledHeader>
       </Layout>
     </>
-  );
-};
-export default IndexPage;
+  )
+}
+export default IndexPage
 
 const StyledHeader = styled.h1`
   color: var(--color-primary-light);
-`;
+`

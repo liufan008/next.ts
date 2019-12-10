@@ -1,3 +1,3 @@
-const Footer = (): JSX.Element => <footer>Im here to stay</footer>;
+const Footer = (): JSX.Element => <footer>Im here to stay</footer>
 
-export default Footer;
+export default Footer

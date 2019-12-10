@@ -1,13 +1,13 @@
-import * as React from "react";
-import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
+import * as React from 'react'
+import Head from 'next/head'
+import Header from './Header'
+import Footer from './Footer'
 
 type Props = {
-  title?: string;
-};
+  title?: string
+}
 
-const Layout: React.FC<Props> = ({ children, title = "Layout Title" }) => (
+const Layout: React.FC<Props> = ({ children, title = 'Layout Title' }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -18,6 +18,6 @@ const Layout: React.FC<Props> = ({ children, title = "Layout Title" }) => (
     {children}
     <Footer />
   </div>
-);
+)
 
-export default Layout;
+export default Layout
