@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import Layout from '~/components/Layout'
+import Layout from '~/views/layouts/Layout'
 
 function Page({ stars }: { stars: string }): JSX.Element {
   return (
