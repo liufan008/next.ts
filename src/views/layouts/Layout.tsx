@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Header from '~/views/components/Header'
 import Footer from '~/views/components/Footer'
 
-type Props = {
+type IProps = {
   title?: string
 }
 
-const Layout: React.FC<Props> = ({ children, title = 'Layout Title' }) => (
+const Layout: React.FC<IProps> = ({ children, title = 'Layout Title' }) => (
   <div>
     <Head>
       <title>{title}</title>
