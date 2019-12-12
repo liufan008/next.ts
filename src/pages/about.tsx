@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
 import Layout from '~/views/layouts/Layout'
-import { Button } from '~/views/ui/Button'
 
 const AboutPage: React.FC = () => (
   <Layout title="About | Next.js + TypeScript Example">
@@ -12,7 +11,6 @@ const AboutPage: React.FC = () => (
         <a>Go home</a>
       </Link>
     </p>
-    <Button>Button</Button>
   </Layout>
 )
 
