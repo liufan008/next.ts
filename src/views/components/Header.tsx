@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styled from 'styled-components'
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT' },
@@ -9,27 +10,38 @@ const links = [
   return link
 })
 
-const linkStyle = {
-  marginRight: 15,
-}
-
 const Header = (): JSX.Element => (
-  <nav>
+  <Nav>
     <Link href="/">
-      <a style={linkStyle}>Home</a>
+      <StyledLink>Home</StyledLink>
     </Link>
     <Link href="/about">
-      <a style={linkStyle}>About</a>
+      <StyledLink>About</StyledLink>
     </Link>
     <Link href="/stars">
-      <a style={linkStyle}>Stars</a>
+      <StyledLink>Stars</StyledLink>
     </Link>
     {links.map(({ href, label }) => (
       <Link key={href} href={href}>
-        <a style={linkStyle}>{label}</a>
+        <StyledLink href={href}>{label}</StyledLink>
       </Link>
     ))}
-  </nav>
+  </Nav>
 )
 
 export default Header
+
+const Nav = styled.nav`
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+`
+const StyledLink = styled.a`
+  color: var(--link-color);
+  margin-right: 15px;
+  padding: 24px;
+  text-decoration: none;
+  visited {
+    text-decoration: none;
+  }
+`
