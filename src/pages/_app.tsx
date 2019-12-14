@@ -1,7 +1,6 @@
 import React from 'react'
 import NProgress from 'nprogress'
 import Router from 'next/router'
-import Head from 'next/head'
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
 import withData from '~/utils/withApollo'
@@ -27,9 +26,6 @@ class MyApp extends App<Props> {
     return (
       <ThemeProvider theme={theme}>
         <ApolloProvider client={apollo}>
-          <Head>
-            <link rel="stylesheet" type="text/css" href="/nprogress.css" />
-          </Head>
           <GlobalStyle />
           <Component {...pageProps} />
         </ApolloProvider>

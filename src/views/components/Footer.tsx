@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const Footer = (): JSX.Element => (
   <FooterGroup>
     <Text>Im here to stay</Text>
+    <Text>&copy; {new Date().getFullYear()}</Text>
   </FooterGroup>
 )
 
