@@ -13,6 +13,8 @@ const Layout: React.FC<IProps> = ({ children, title = 'Layout Title' }) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="robots" content="noindex nofollow" />
+      <link rel="stylesheet" type="text/css" href="/nprogress.css" />
     </Head>
     <Header />
     {children}
