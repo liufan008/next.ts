@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# docz
+.docz
+
 # production
 /build
 
