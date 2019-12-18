@@ -21,10 +21,17 @@
 - EsLint
 - Prettier
 - Styled Components
+- Docz
 
 ## How to use
 
 ```javascript
 npm i
 npm run dev
+```
+
+## Start the Docz Component Library
+
+```
+npm run docz:dev
 ```
