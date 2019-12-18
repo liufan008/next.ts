@@ -14,7 +14,8 @@ export const Card = ({ title, text }: Props): JSX.Element => (
 )
 
 const CardWrapper = styled.div`
-  border: 1px solid grey;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-text);
   display: grid;
   padding: 2rem;
   height: 100px;

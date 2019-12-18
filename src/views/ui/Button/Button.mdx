@@ -4,12 +4,19 @@ name: Button
 
 import { Props, Playground } from 'docz'
 import { Button } from './Button'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from '../../../styles/globals'
+import { theme } from '../../../styles/theme'
 
 # Button
 
 ## Basic usage
 
 <Playground>
-    <Button>Click me</Button>
+    <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Button>Click me</Button>
+    </ThemeProvider>
 </Playground>
+
 
