@@ -18,11 +18,11 @@ const Header = (): JSX.Element => (
     <Link href="/about">
       <StyledLink>About</StyledLink>
     </Link>
-    <Link href="/stars">
+    <Link href="/stars" prefetch={false}>
       <StyledLink>Stars</StyledLink>
     </Link>
     {links.map(({ href, label }) => (
-      <Link key={href} href={href}>
+      <Link key={href} href={href} prefetch={false}>
         <StyledLink href={href}>{label}</StyledLink>
       </Link>
     ))}
